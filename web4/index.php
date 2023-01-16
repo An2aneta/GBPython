@@ -2,20 +2,20 @@
 $experience = [
     [
          'workName' => 'Протаптыватель тропинок', 
-         'dateWorkStart' => 'Jan 2015',
-         'dateWorkFinish'=> 'Current', 
+         'dateWorkStart' => 'Март 2022',
+         'dateWorkFinish'=> 'Настоящее время', 
          'description' => 'I work a lot',
     ],
     [
          'workName' => 'Чиновник министерства / ministry.com', 
-         'dateWorkStart' => 'Mar 2012',
-         'dateWorkFinish'=> 'Dec 2014', 
+         'dateWorkStart' => 'Май  2016',
+         'dateWorkFinish'=> 'Март 2022', 
          'description' => 'It was cool',
     ],
     [
          'workName' => 'Инженер / rogaikopita.com', 
-         'dateWorkStart' => 'Jun 2010',
-         'dateWorkFinish'=> 'Mar 2012', 
+         'dateWorkStart' => 'Июнь 2010',
+         'dateWorkFinish'=> 'Май 2016', 
          'description' => 'Boring, boring',
     ],
  ];
@@ -114,15 +114,21 @@ $experience = [
           <h2 class="w3-text-grey w3-padding-16"><i
               class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Опыт работы</h2>
             
-              <?php for ($i = 0; $i < count($experience); $i++) : ?>
-                 <div class="w3-container">
-                 <h5 class="w3-opacity"><b><?php echo $experience[$i]["workName"];?></b></h5>
-                 <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i><?php echo $experience[$i]["dateWorkStart"];?> - <span
-                class="w3-tag w3-teal w3-round"><?php echo $experience[$i]["dateWorkFinish"];?></span></h6>
-                 <p><?php echo $experience[$i]["description"];?></p>
-                 <hr>
-                 </div>
-             <?php endfor; ?>
+            <?php for ($i = 0; $i < count($experience); $i++): ?>
+                    <div class="w3-container">
+                     <h5 class="w3-opacity"><b><?php echo $experience[$i]["workName"];?></b></h5>
+                     <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>
+                     <?php echo $experience[$i]["dateWorkStart"];?> - 
+                     <?php if ($i == 0): ?>
+                            <span class="w3-tag w3-teal w3-round"><?php echo $experience[$i]["dateWorkFinish"];?></span>
+                     <?php else: ?>
+                            <?php echo $experience[$i]["dateWorkFinish"];?>
+                    <?php endif; ?>        
+                     </h6>
+                     <p><?php echo $experience[$i]["description"];?></p>
+                     <hr>
+                    </div>
+            <?php endfor; ?>
           </div>
 
         <div class="w3-container w3-card w3-white">
