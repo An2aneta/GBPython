@@ -9,14 +9,12 @@
 # ; -> 5
 
 n = int(input())
-list = []
-for i in range(n):
-    list.append(int(input()))
-print(list) 
+list = [int(input()) for i in range(n)]
+# print(list) 
 x = int(input())
 differ = abs(list[0] - x)
 res = list[0]
-for i in range(len(list)):
+for i in range(1, len(list)):
     if abs(list[i] - x) < differ:
         differ = abs(list[i] - x)
         res = list[i]
