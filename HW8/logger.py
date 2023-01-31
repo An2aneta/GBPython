@@ -81,7 +81,7 @@ def print_data(fileNumber):
 
             print(*data_second)
     
-        return data_first
+        return data_second
 
 
 
@@ -104,20 +104,24 @@ def put_data():
         data_first = print_data(1)
         with open('data_first_variant.csv', 'w', encoding = 'utf-8') as file:
             nRec = int(input('\nУкажите номер записи, которую Вы хотите изменить: '))
-            if nRec < len(data_first):
-                data_first = data_first[:nRec] + [f'{name}\n{surname}\n{phone}\n{adress}\n'] + data_first[nRec+1:]
-                for i in data_first:
-                    file.write(f'{i}\n\n')
-            else:
-                print('Введенное число больше, чем количество записей!')
-            print('Успешно!!')   
+            while nRec > len(data_first):
+                nRec = int(input("Введенное число больше, чем количество записей! Try again: "))
+            data_first = data_first[:nRec] + [f'{name}\n{surname}\n{phone}\n{adress}\n'] + data_first[nRec+1:]
+            print(data_first)
+            for i in data_first:
+                file.write(f'{i}\n')
+        print('Успешно!!')   
 
     if fileNumber == 2:
         data_second = print_data(2)
-        with open('data_second_variant.csv', 'r', encoding = 'utf-8') as file:
+        with open('data_second_variant.csv', 'w', encoding = 'utf-8') as file:
             nRec = int(input('\nУкажите номер записи, которую Вы хотите изменить: '))
+            while nRec > len(data_first):
+                nRec = int(input("Введенное число больше, чем количество записей! Try again: "))
             data_second = data_second[:nRec] + [f'{name};{surname};{phone};{adress}\n'] + data_second[nRec+1:]
-
+            for i in data_second:
+                file.write(i)
+        print('Успешно!!')   
 
 
 def delete_data():
