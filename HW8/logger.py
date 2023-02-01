@@ -26,36 +26,7 @@ def input_data():
         with open('data_second_variant.csv', 'a', encoding = 'utf-8') as file:
             file.write(f'{name};{surname};{phone};{adress}\n\n')
 
-    print('Успешно!!')
-
-
-# def print_data(fileNumberber = None):
-    
-#     if fileNumberber is None or fileNumberber == 1:
-#         print('1 файл:')
-#         with open('data_first_variant.csv', 'r', encoding = 'utf-8') as file:
-#             data_first = file.readlines()
-#             data_first_second = []
-#             j = 0
-#             num = 1
-#             for i in range(len(data_first)):
-#                 if data_first[i] == '\n' or i == len(data_first) - 1:
-#                     data_first_second.extend([f"\n{num}.\n", ''.join(data_first[j:i]).strip(), '\n'])
-#                     j = i
-#                     num += 1
-#             data_first = data_first_second
-#             print(''.join(data_first))
-    
-#     if fileNumberber is None or fileNumberber == 2:
-#         print('2 файл:\n')
-#         with open('data_second_variant.csv', 'r', encoding = 'utf-8') as file:
-#             data_second = list(file.readlines())
-#             num = 1
-#             for i in data_second:
-#                 if i != '\n':
-#                     i = i.strip()
-#                     print(f'{num}. {i}')
-#                     num += 1       
+    print('Успешно!!') 
 
 
 def print_data(fileNumber):
@@ -86,7 +57,7 @@ def print_data(fileNumber):
 
 
 def put_data():
-    # data_first, data_second = print_data()
+
     fileNumber = int(input(f'Укажите какой файл нужно изменить:\n'
                         f'1 - 1 файл\n'
                         f'2 - 2 файл\n'))
